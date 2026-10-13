@@ -92,7 +92,7 @@ public class Tabuleiro {
     }
     
     public void marcarJogada(char simbolo, String coordenada){
-        switch(coordenada){
+        switch(coordenada.toUpperCase()){
             case "A1":
                    this.a1 = simbolo;
                 break;
@@ -129,4 +129,49 @@ public class Tabuleiro {
         }
     }
     
-}
+    public boolean estaVazio(String coordenada) {
+
+        switch (coordenada.trim().toUpperCase()) {
+
+            case "A1" -> {
+                return a1 == ' ';
+            }
+
+            case "A2" -> {
+                return a2 == ' ';
+            }
+
+            case "A3" -> {
+                return a3 == ' ';
+            }
+
+            case "B1" -> {
+                return b1 == ' ';
+            }
+
+            case "B2" -> {
+                return b2 == ' ';
+            }
+
+            case "B3" -> {
+                return b3 == ' ';
+            }
+
+            case "C1" -> {
+                return c1 == ' ';
+            }
+
+            case "C2" -> {
+                return c2 == ' ';
+            }
+
+            case "C3" -> {
+                return c3 == ' ';
+            }
+
+            default -> {
+                return false;
+            }
+        } 
+   }
+} 

@@ -30,13 +30,28 @@ public class JogoDaVelha {
                 System.out.println("Jogador 1, escolha onde jogar: ");
                 String local = entrada.nextLine();
                 
-                tabuleiro.marcarJogada(jogador1.getSimbolo(), local);
-                tabuleiro.setJogadorDaVez(2);
+                 boolean estaVazia = tabuleiro.estaVazio(local);
+                
+                if(estaVazia == true){
+                    tabuleiro.marcarJogada(jogador1.getSimbolo(), local);
+                    tabuleiro.setJogadorDaVez(2);
+                }
+
                 tabuleiro.mostrarTabuleiro();
             }
             else{
                System.out.println("Jogador 2, escolha onde jogar: "); 
                String local = entrada.nextLine();
+               
+               boolean estaVazia = tabuleiro.estaVazio(local);
+                
+                if(estaVazia == true){
+                     tabuleiro.marcarJogada(jogador2.getSimbolo(), local);
+                     tabuleiro.setJogadorDaVez(1);
+                } 
+                
+                
+                 tabuleiro.mostrarTabuleiro();
             }
             
             
