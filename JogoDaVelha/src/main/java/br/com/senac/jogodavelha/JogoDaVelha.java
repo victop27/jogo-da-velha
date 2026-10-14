@@ -52,6 +52,7 @@ public class JogoDaVelha {
                 
                 
                  tabuleiro.mostrarTabuleiro();
+                 tabuleiro.verificarGanhador(jogador1.getSimbolo(), jogador1.getNome());
             }
             
             

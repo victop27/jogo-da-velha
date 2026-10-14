@@ -13,6 +13,7 @@ public class Tabuleiro {
     private int notaJ2;
     private String regras;
     private boolean houveGanhadorUltimaRodada;
+    
     private int jogadorDaVez;
     private char a1 = ' ', a2 = ' ', a3 = ' ', b1 = ' ', b2 = ' ', b3 = ' ', c1 = ' ', c2 = ' ', c3 = ' ';
 
@@ -65,8 +66,36 @@ public class Tabuleiro {
         this.jogadorDaVez = 1;
     }
     
-    public void verificarGanhador(){
-        
+    public void verificarGanhador(char simbolo ,String nome){
+        if (a1 == simbolo && a2 == simbolo && a3 == simbolo){
+        this.houveGanhadorUltimaRodada = true;
+        }
+        else if (b1 == simbolo && b2 == simbolo && b3 == simbolo){
+        this.houveGanhadorUltimaRodada = true;
+        }
+        else if (c1 == simbolo && c2 == simbolo && c3 == simbolo){
+        this.houveGanhadorUltimaRodada = true;
+        }
+        else if (b1 == simbolo && a1 == simbolo && c1 == simbolo){
+        this.houveGanhadorUltimaRodada = true;
+        }
+        else if (a2 == simbolo && b2 == simbolo && c2 == simbolo){
+        this.houveGanhadorUltimaRodada = true;
+        }
+        else if (a3 == simbolo && b3 == simbolo && c3 == simbolo){
+        this.houveGanhadorUltimaRodada = true;
+        }
+        else if (a1 == simbolo && b2 == simbolo && c3 == simbolo){
+        this.houveGanhadorUltimaRodada = true;
+        }
+        else if (a3 == simbolo && b2 == simbolo && c1 == simbolo){
+        this.houveGanhadorUltimaRodada = true;
+        }
+
+        if(this.houveGanhadorUltimaRodada == true){
+        System.out.println("GANHADOR" + nome);
+        }
+   
     }
     
     public void organizar(){
